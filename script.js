@@ -1,4 +1,4 @@
-// Counter animation (for Home stats)
+// Counter animation (only runs where .stat-number exists)
 const counters = document.querySelectorAll(".stat-number");
 
 counters.forEach(counter => {
