@@ -238,6 +238,27 @@ body {
   color: var(--accent);
 }
 
+/* Read More Button */
+
+.read-more-btn {
+  margin-top: 14px;
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 12px 32px rgba(37,99,235,0.45);
+  transition: 0.3s ease;
+}
+
+.read-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(37,99,235,0.6);
+}
+
 /* Hero right */
 
 .hero-right {
