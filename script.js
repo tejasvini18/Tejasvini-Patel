@@ -1,45 +1,44 @@
-// SCROLL REVEAL ANIMATION
-const revealElements = document.querySelectorAll(".reveal");
+/* ------------------------------------------------------
+   REVEAL ON SCROLL
+------------------------------------------------------ */
 
-function handleReveal() {
-  const triggerBottom = window.innerHeight * 0.85;
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
 
-  revealElements.forEach((el, index) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < triggerBottom) {
-      setTimeout(() => {
-        el.classList.add("show");
-      }, index * 120);
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 120;
+
+    if (elementTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
     }
-  });
+  }
 }
 
-window.addEventListener("scroll", handleReveal);
-window.addEventListener("load", handleReveal);
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 
-// STATS COUNTER (Home Page)
-const statNumbers = document.querySelectorAll(".stat-number");
 
-function animateStats() {
-  statNumbers.forEach((el) => {
-    const target = parseInt(el.getAttribute("data-target"), 10);
-    if (!target) return;
+/* ------------------------------------------------------
+   STAT COUNTERS (Home Page)
+------------------------------------------------------ */
 
-    let current = 0;
-    const increment = Math.max(1, Math.floor(target / 60));
+const counters = document.querySelectorAll(".stat-number");
 
-    const update = () => {
-      current += increment;
-      if (current >= target) {
-        el.textContent = target;
-      } else {
-        el.textContent = current;
-        requestAnimationFrame(update);
-      }
-    };
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute("data-target");
+    const current = +counter.innerText;
+    const increment = target / 80;
 
-    update();
-  });
-}
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target;
+    }
+  };
 
-window.addEventListener("load", animateStats);
+  updateCount();
+});
