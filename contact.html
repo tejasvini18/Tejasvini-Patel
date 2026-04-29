@@ -3,38 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Contact | Tejasvini Patel</title>
   <meta name="description" content="Contact Tejasvini Patel — Senior QA Engineer & SDET based in Swindon, UK. Send a message directly to her email.">
-
-  <link rel="canonical" href="https://www.tejasvinipatel.com/contact.html">
-  <link rel="icon" type="image/png" href="logo.png">
-
-  <meta property="og:title" content="Contact | Tejasvini Patel">
-  <meta property="og:image" content="https://www.tejasvinipatel.com/logo.png">
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-01ZNHF2H3V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-01ZNHF2H3V');
-  </script>
-
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
 </head>
 
 <body>
-
 <header class="topbar glass">
-  <div class="topbar-left">
-    <img src="logo.png" class="logo">
-    <div class="brand-block">
-      <span class="brand-name">Tejasvini Patel</span>
-      <span class="brand-role">Senior QA Engineer & SDET</span>
+  <div class="brand">
+    <img src="logo.png" class="logo" alt="Logo">
+    <div>
+      <h2 class="brand-name">Tejasvini Patel</h2>
+      <p class="brand-role">Senior QA Engineer & SDET</p>
     </div>
   </div>
-
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -43,63 +26,56 @@
     <a href="skills.html">Skills</a>
     <a href="projects.html">Projects</a>
     <a href="certifications.html">Certificates</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a class="active" href="contact.html">Contact</a>
   </nav>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section class="section hero full-height reveal">
-    <div class="hero-left">
-      <span class="eyebrow glass-chip">Let’s Connect</span>
-      <h1>Contact <span class="accent">Tejasvini Patel</span></h1>
-      <p class="hero-subtitle">
-        Send me a message — it will be delivered directly to my email:
-        <strong>tejasvini18p@gmail.com</strong>
-      </p>
+<section class="section hero full-height reveal">
+  <div class="hero-left">
+    <span class="glass-chip">Let’s Connect</span>
+    <h1>Contact <span class="accent">Tejasvini Patel</span></h1>
+    <p class="hero-subtitle">
+      Send me a message — it will be delivered directly to my email:
+      <strong>tejasvini18p@gmail.com</strong>
+    </p>
+    <ul class="contact-info glass">
+      <li><strong>Email:</strong> <a href="mailto:tejasvini18p@gmail.com">tejasvini18p@gmail.com</a></li>
+      <li><strong>Location:</strong> Prospero Way, Swindon, United Kingdom</li>
+      <li><strong>Availability:</strong> UK‑wide · Hybrid / Remote</li>
+    </ul>
+  </div>
 
-      <ul class="contact-info glass">
-        <li><strong>Email:</strong> <a href="mailto:tejasvini18p@gmail.com">tejasvini18p@gmail.com</a></li>
-        <li><strong>Location:</strong> Prospero Way, Swindon, United Kingdom</li>
-        <li><strong>Availability:</strong> UK‑wide · Hybrid / Remote</li>
-      </ul>
+  <div class="hero-right contact-layout">
+    <!-- FORM (Formspree – replace with your own endpoint if needed) -->
+    <form class="glass contact-form" action="https://formspree.io/f/mjkvzqzv" method="POST">
+      <h2>Send a Message</h2>
+      <p class="form-note">Your message will be delivered to <strong>tejasvini18p@gmail.com</strong>.</p>
+      <label>Name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Subject<input type="text" name="subject" required></label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn-primary full-width">Send Message</button>
+    </form>
+
+    <!-- MAP -->
+    <div class="glass map-wrapper">
+      <h3>Location</h3>
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY_HERE&q=Prospero+Way,Swindon,UK&zoom=16"
+        allowfullscreen loading="lazy">
+      </iframe>
+      <p class="map-note">Red pin shows Prospero Way, Swindon, UK.</p>
     </div>
-
-    <div class="hero-right contact-layout">
-
-      <!-- FORM -->
-      <form class="glass contact-form" action="https://formspree.io/f/mjkvzqzv" method="POST">
-        <h2>Send a Message</h2>
-        <p class="form-note">Your message will be delivered to <strong>tejasvini18p@gmail.com</strong>.</p>
-
-        <label>Name<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Subject<input type="text" name="subject" required></label>
-        <label>Message<textarea name="message" rows="5" required></textarea></label>
-
-        <button type="submit" class="btn-primary full-width">Send Message</button>
-      </form>
-
-      <!-- MAP -->
-      <div class="glass map-wrapper">
-        <h3>Location</h3>
-        <iframe
-          class="map-frame"
-          src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY_HERE&q=Prospero+Way,Swindon,UK&zoom=16"
-          allowfullscreen loading="lazy">
-        </iframe>
-        <p class="map-note">Red pin shows Prospero Way, Swindon, UK.</p>
-      </div>
-
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div>© 2026 · www.tejasvinipatel.com · All Rights Reserved.</div>
-  <div>Senior QA Engineer & SDET · Swindon, UK · Open to UK‑wide · Hybrid / Remote</div>
+  <p>© 2026 · www.tejasvinipatel.com · All Rights Reserved.</p>
 </footer>
 
 <script src="script.js"></script>
