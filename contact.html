@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="theme-dark">
   <header class="site-header glass-blur">
     <div class="nav-inner">
@@ -17,6 +18,7 @@
           <span class="brand-url"></span>
         </div>
       </a>
+
       <nav class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -27,6 +29,7 @@
         <a href="certifications.html">Certificates</a>
         <a href="contact.html" class="active">Contact</a>
       </nav>
+
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span>
       </button>
@@ -46,37 +49,44 @@
 
     <section class="section section-observe">
       <div class="grid-2">
+
+        <!-- CONTACT FORM -->
         <div class="glass-card">
           <h2>Send a message</h2>
-          <form class="contact-form" id="contactForm" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+
+          <form id="contactForm" class="contact-form">
             <div class="form-group">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" required />
             </div>
+
             <div class="form-group">
               <label for="email">Email</label>
               <input id="email" name="email" type="email" required />
             </div>
+
             <div class="form-group">
               <label for="subject">Subject</label>
               <input id="subject" name="subject" type="text" required />
             </div>
+
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
+
             <button type="submit" class="btn primary btn-glow">Send message</button>
           </form>
-          <p class="muted small">
-            For production use, connect this form to a backend or email service (Formspree, EmailJS, etc.).
-          </p>
+
+          <p id="formStatus" class="muted small"></p>
         </div>
 
+        <!-- MAP -->
         <div class="glass-card">
           <h2>Location</h2>
           <p>Based in Swindon, UK · Open to UK-wide roles.</p>
+
           <div class="map-container">
-            <!-- Simple embedded map with red pin (replace src with your own Google Maps embed if you want) -->
             <iframe
               title="Map - Swindon, UK"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.889947955!2d-1.792!3d51.555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871443b0c0b0001%3A0x0000000000000000!2sSwindon!5e0!3m2!1sen!2suk!4v1700000000000"
@@ -87,10 +97,10 @@
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          <p class="muted small">
-            Red pin indicates Swindon, UK as base location.
-          </p>
+
+          <p class="muted small">Red pin indicates Swindon, UK as base location.</p>
         </div>
+
       </div>
     </section>
   </main>
@@ -101,6 +111,7 @@
         <div class="footer-name">Tejasvini Patel</div>
         <div class="footer-tagline">Quality without compromise.</div>
       </div>
+
       <div class="footer-nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -111,12 +122,45 @@
         <a href="certifications.html">Certificates</a>
         <a href="contact.html">Contact</a>
       </div>
+
       <div class="footer-right">
         <div>© 2026 www.tejasvinipatel.com</div>
         <div class="footer-note">Built with precision, tested with intent.</div>
       </div>
     </div>
   </footer>
+
+  <!-- EMAILJS SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    (function() {
+      emailjs.init("uYXYzgVNwfbLfBOXc"); 
+    })();
+  </script>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formStatus = document.getElementById("formStatus");
+
+      emailjs.send("service_g9ezcrw", "service_g9ezcrw", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+      })
+      .then(function() {
+        formStatus.textContent = "Message sent successfully!";
+        formStatus.style.color = "#4caf50";
+        document.getElementById("contactForm").reset();
+      }, function(error) {
+        formStatus.textContent = "Failed to send message. Try again.";
+        formStatus.style.color = "#ff5252";
+      });
+    });
+  </script>
 
   <script src="script.js"></script>
 </body>
